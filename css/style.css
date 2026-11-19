@@ -1,58 +1,42 @@
-/* ==========================================================================
-   MOTOWORLD - ESTILOS PRINCIPALES
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   1. VARIABLES CSS (PALETA DE COLORES, TIPOGRAFÍAS Y CONSTANTES DE DISEÑO)
-   -------------------------------------------------------------------------- */
 :root {
-    /* Colores principales */
-    --primary: #D72638;                        /* Rojo vibrante distintivo */
-    --primary-hover: #b01827;                  /* Rojo oscuro al pasar el cursor */
-    --primary-glow: rgba(215, 38, 56, 0.35);   /* Resplandor y sombra del color rojo */
-    --secondary: #F9A826;                      /* Ámbar / dorado para insignias y detalles */
+    --primary: #D72638;
+    --primary-hover: #b01827;
+    --primary-glow: rgba(215, 38, 56, 0.35);
+    --secondary: #F9A826;
 
-    /* Colores de fondo */
-    --bg-main: #0B0C10;                        /* Fondo oscuro general de la página */
-    --bg-surface: #14161F;                     /* Fondo para separar la sección de tarjetas */
-    --bg-card: #1A1D28;                        /* Fondo oscuro de las tarjetas individuales */
-    --bg-glass: rgba(15, 16, 22, 0.85);        /* Fondo translúcido del menú superior */
+    --bg-main: #0B0C10;
+    --bg-surface: #14161F;
+    --bg-card: #1A1D28;
+    --bg-glass: rgba(15, 16, 22, 0.85);
 
-    /* Colores de texto */
-    --text-light: #FFFFFF;                     /* Blanco puro para títulos y texto principal */
-    --text-muted: #A0A5B5;                     /* Gris claro para párrafos y descripciones */
-    --text-dim: #6C7284;                       /* Gris atenuado para datos menores */
+    --text-light: #FFFFFF;
+    --text-muted: #A0A5B5;
+    --text-dim: #6C7284;
 
-    /* Bordes y Sombras */
-    --border-subtle: rgba(255, 255, 255, 0.08); /* Borde sutil semitransparente */
+    --border-subtle: rgba(255, 255, 255, 0.08);
     --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
     --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
-    --shadow-card-glow: 0 12px 32px rgba(215, 38, 56, 0.15); /* Efecto neón al hacer hover */
+    --shadow-card-glow: 0 12px 32px rgba(215, 38, 56, 0.15);
 
-    /* Tipografías */
-    --font-heading: 'Oswald', sans-serif;      /* Fuente robusta de estilo deportivo para títulos */
-    --font-body: 'Montserrat', sans-serif;     /* Fuente moderna y legible para el cuerpo */
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
 
-    /* Transiciones y Dimensiones */
-    --trans-normal: 0.35s cubic-bezier(0.25, 1, 0.5, 1); /* Animación fluida personalizada */
-    --max-width: 1200px;                       /* Ancho máximo del contenido centrado */
-    --radius-md: 12px;                         /* Esquinas redondeadas medianas */
-    --radius-lg: 20px;                         /* Esquinas redondeadas para tarjetas */
-    --radius-pill: 50px;                       /* Redondeo completo tipo píldora (botones/badges) */
+    --trans-normal: 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    --max-width: 1200px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-pill: 50px;
 }
 
-/* --------------------------------------------------------------------------
-   2. REINICIO Y ESTILOS BASE (RESET & ELEMENTOS GLOBALES)
-   -------------------------------------------------------------------------- */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Asegura que el padding no desborde el ancho de los elementos */
+    box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en los enlaces de navegación */
+    scroll-behavior: smooth;
     font-size: 16px;
 }
 
@@ -61,7 +45,7 @@ body {
     background-color: var(--bg-main);
     color: var(--text-light);
     line-height: 1.6;
-    overflow-x: hidden; /* Evita scroll horizontal indeseado */
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -72,37 +56,30 @@ img {
 }
 
 a {
-    text-decoration: none; /* Elimina el subrayado por defecto */
+    text-decoration: none;
     color: inherit;
     transition: var(--trans-normal);
 }
 
 ul {
-    list-style: none; /* Elimina las viñetas de las listas */
+    list-style: none;
 }
 
-/* --------------------------------------------------------------------------
-   3. ESTRUCTURA Y UTILIDADES COMUNES
-   -------------------------------------------------------------------------- */
-/* Contenedor central que limita el ancho de las secciones */
 .container {
     width: 90%;
     max-width: var(--max-width);
     margin: 0 auto;
 }
 
-/* Espaciado vertical estándar para secciones de la web */
 .section {
     padding: 100px 0;
     position: relative;
 }
 
-/* Utilidad para centrar texto */
 .text-center {
     text-align: center;
 }
 
-/* Cabecera de sección (título y subtítulo) */
 .section-header {
     margin-bottom: 60px;
 }
@@ -124,9 +101,6 @@ ul {
     margin: 0 auto;
 }
 
-/* --------------------------------------------------------------------------
-   4. BOTONES (BOTÓN PRINCIPAL CON EFECTO HOVER Y FLECHA)
-   -------------------------------------------------------------------------- */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -150,14 +124,12 @@ ul {
     box-shadow: 0 4px 18px var(--primary-glow);
 }
 
-/* Efecto hover: eleva el botón y aumenta el resplandor */
 .btn-primary:hover {
     background: var(--primary-hover);
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(215, 38, 56, 0.5);
 }
 
-/* Animación de la flecha del botón al interactuar */
 .btn-arrow {
     transition: var(--trans-normal);
 }
@@ -166,10 +138,6 @@ ul {
     transform: translateX(5px);
 }
 
-/* --------------------------------------------------------------------------
-   5. BARRA DE NAVEGACIÓN Y ENCABEZADO (GLASSMORPHISM)
-   -------------------------------------------------------------------------- */
-/* Barra fija superior con fondo semitransparente y desenfoque (Glassmorphism) */
 .header {
     position: fixed;
     top: 0;
@@ -190,7 +158,6 @@ ul {
     padding: 16px 0;
 }
 
-/* Logotipo */
 .logo {
     font-family: var(--font-heading);
     font-size: 1.9rem;
@@ -221,7 +188,6 @@ ul {
     color: var(--primary);
 }
 
-/* Menú de navegación */
 .menu {
     display: flex;
     gap: 32px;
@@ -236,7 +202,6 @@ ul {
     padding: 6px 0;
 }
 
-/* Línea roja animada debajo de los enlaces al pasar el ratón */
 .menu a::after {
     content: "";
     position: absolute;
@@ -256,25 +221,20 @@ ul {
     width: 100%;
 }
 
-/* --------------------------------------------------------------------------
-   6. SECCIÓN HERO (PORTADA PRINCIPAL)
-   -------------------------------------------------------------------------- */
 .hero-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
     padding-top: 100px;
-    /* Imagen de fondo con gradiente oscuro para asegurar legibilidad */
-    background: 
+    background:
         linear-gradient(135deg, rgba(11, 12, 16, 0.92) 0%, rgba(15, 16, 22, 0.75) 50%, rgba(11, 12, 16, 0.95) 100%),
         url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efecto parallax al hacer scroll */
+    background-attachment: fixed;
 }
 
-/* Capa decorativa con resplandor radial */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -319,21 +279,16 @@ ul {
     gap: 18px;
 }
 
-/* --------------------------------------------------------------------------
-   7. SECCIÓN MOTOS LEGENDARIAS (GRID DE TARJETAS Y ESPECIFICACIONES)
-   -------------------------------------------------------------------------- */
 .legendarias-section {
     background-color: var(--bg-surface);
 }
 
-/* Cuadrícula CSS Grid autoajustable a columnas según el ancho de pantalla */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 35px;
 }
 
-/* Tarjeta individual (Escenario con perspectiva 3D) */
 .card {
     background: transparent;
     perspective: 1400px;
@@ -345,7 +300,6 @@ ul {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Contenedor giratorio interno que realiza el volteo 3D */
 .card-inner {
     position: relative;
     width: 100%;
@@ -355,13 +309,11 @@ ul {
     border-radius: var(--radius-lg);
 }
 
-/* Efecto al pasar el cursor (hover) o al estar activa por clic (.is-flipped) */
 .card:hover .card-inner,
 .card.is-flipped .card-inner {
     transform: rotateY(180deg);
 }
 
-/* Caras frontal y trasera */
 .card-face {
     width: 100%;
     -webkit-backface-visibility: hidden;
@@ -376,14 +328,12 @@ ul {
     transition: border-color var(--trans-normal), box-shadow var(--trans-normal);
 }
 
-/* Cara frontal (visible inicialmente) */
 .card-front {
     position: relative;
     transform: rotateY(0deg);
     z-index: 2;
 }
 
-/* Cara trasera (inicia girada 180 grados) */
 .card-back {
     position: absolute;
     inset: 0;
@@ -393,14 +343,12 @@ ul {
     background: linear-gradient(180deg, #161820 0%, #0d0e13 100%);
 }
 
-/* Resplandor neón en los bordes al interactuar */
 .card:hover .card-face,
 .card.is-flipped .card-face {
     border-color: rgba(215, 38, 56, 0.55);
     box-shadow: var(--shadow-card-glow), var(--shadow-lg);
 }
 
-/* Insignia interactiva para indicar que se puede voltear */
 .card-flip-hint {
     position: absolute;
     bottom: 14px;
@@ -440,7 +388,6 @@ ul {
     text-transform: uppercase;
 }
 
-/* Contenedor de la foto de la moto */
 .card-img-container {
     position: relative;
     height: 230px;
@@ -455,12 +402,10 @@ ul {
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Zoom suave de la foto al pasar el cursor */
 .card:hover .card-img {
     transform: scale(1.08);
 }
 
-/* Insignias flotantes en la esquina superior de la foto */
 .card-badge {
     position: absolute;
     top: 15px;
@@ -477,7 +422,6 @@ ul {
     z-index: 2;
 }
 
-/* Colores temáticos por tipo de moto */
 .badge-classic {
     background: rgba(249, 168, 38, 0.9);
     color: #000;
@@ -498,7 +442,6 @@ ul {
     color: #fff;
 }
 
-/* Contenido textual de la tarjeta */
 .card-body {
     padding: 28px;
     display: flex;
@@ -535,7 +478,6 @@ ul {
     flex-grow: 1;
 }
 
-/* Tabla de especificaciones técnicas (Motor, Potencia, Velocidad) */
 .card-specs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -566,9 +508,6 @@ ul {
     margin-top: 2px;
 }
 
-/* --------------------------------------------------------------------------
-   8. SECCIÓN DE CONTACTO (FORMULARIO E INFORMACIÓN)
-   -------------------------------------------------------------------------- */
 .contacto-section {
     background-color: var(--bg-main);
 }
@@ -718,9 +657,6 @@ ul {
     color: var(--primary);
 }
 
-/* --------------------------------------------------------------------------
-   9. PIE DE PÁGINA (FOOTER Y ENLACES SOCIALES)
-   -------------------------------------------------------------------------- */
 .footer {
     background-color: #060709;
     padding-top: 80px;
@@ -739,7 +675,6 @@ ul {
     margin-bottom: 20px;
 }
 
-/* Botones circulares de redes sociales */
 .social-links {
     display: flex;
     align-items: center;
@@ -780,7 +715,6 @@ ul {
     filter: brightness(1.15);
 }
 
-/* Navegación dentro del footer */
 .footer-heading {
     font-family: var(--font-heading);
     font-size: 1.2rem;
@@ -801,10 +735,9 @@ ul {
 
 .footer-links a:hover {
     color: var(--primary);
-    padding-left: 5px; /* Pequeño desplazamiento hacia la derecha al interactuar */
+    padding-left: 5px;
 }
 
-/* Barra inferior de créditos y derechos */
 .footer-bottom {
     background-color: #030304;
     padding: 20px 0;
@@ -817,17 +750,12 @@ ul {
     color: var(--text-dim);
 }
 
-/* --------------------------------------------------------------------------
-   9. ADAPTABILIDAD RESPONSIVA (MEDIA QUERIES PARA DIFERENTES DISPOSITIVOS)
-   -------------------------------------------------------------------------- */
-/* Tablets grandes y pantallas medianas */
 @media (max-width: 1024px) {
     .hero-title {
         font-size: 3.8rem;
     }
 }
 
-/* Tablets en vertical y teléfonos móviles */
 @media (max-width: 768px) {
     .section {
         padding: 70px 0;
@@ -878,7 +806,6 @@ ul {
     }
 }
 
-/* Teléfonos móviles pequeños */
 @media (max-width: 480px) {
     .section-title {
         font-size: 2.2rem;

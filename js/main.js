@@ -1,12 +1,9 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.card');
 
     cards.forEach(card => {
         card.addEventListener('click', (event) => {
             if (event.target.closest('a')) return;
-
-            
             card.classList.toggle('is-flipped');
         });
         card.addEventListener('keydown', (event) => {
